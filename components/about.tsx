@@ -9,6 +9,7 @@ type Text = {
 const AboutText:React.FC<Text> = ({children,position}) => {
   const ref = useRef<HTMLDivElement>(null);
   const {scrollY} = useContext(ScrollContainer)
+  console.log(scrollY /10)
   const {current:refContainer} = ref;
   // useEffect(() => {
   //   if(refContainer){
@@ -17,7 +18,7 @@ const AboutText:React.FC<Text> = ({children,position}) => {
   //   }
   // })
   return (
-    <div className={`mt-14 mb-14 w-44 absolute transition-all ease-in text-md ${position}-5`} style={{transform:`translateX(${scrollY / 20}px)`}} ref={ref}>
+    <div className={`mt-14 mb-14 w-44 absolute transition-all ease-linear text-md ${position}-5`} style={{transform:`translateX(${scrollY / 10}px)`}} ref={ref}>
       <p>{children}</p>
     </div>
   )
