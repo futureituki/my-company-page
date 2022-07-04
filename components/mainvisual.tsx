@@ -6,8 +6,9 @@ export const MainVisual:React.FC = () => {
     <div className="h-screen w-full relative">
       <video autoPlay muted loop
       playsInline
-      className="absolute w-full h-full object-cover"
-      src="/assets/top-back.mp4"/>
+      className="absolute w-full h-full object-cover">
+        <source src="/assets/top-back.mp4" type="video/mp4"/>
+      </video>
       <ArrowDown/>
     </div>
   )
