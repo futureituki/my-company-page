@@ -17,7 +17,7 @@ const AboutText:React.FC<Text> = ({children,position}) => {
   //   }
   // })
   return (
-    <div className={`mt-14 mb-14 w-44 absolute text-md ${position}-5`} style={{transform:`translateX(${scrollY / 9}px)`}} ref={ref}>
+    <div className={`mt-14 mb-14 w-44 absolute transition-all text-md ${position}-5`} style={{transform:`translateX(${scrollY / 9}px)`}} ref={ref}>
       <p>{children}</p>
     </div>
   )

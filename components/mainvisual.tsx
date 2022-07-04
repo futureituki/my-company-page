@@ -11,7 +11,7 @@ export const MainVisual:React.FC = () => {
       playsInline
       className="absolute w-full h-full object-cover"
       >
-        <source src="/assets/top-back.mp4" type="video/mp4"/>
+        <source src="/assets/top-back.mp4" type="video/mp4; codecs=hvc1"/>
       </video>
       <ArrowDown/>
     </div>
