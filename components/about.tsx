@@ -20,7 +20,7 @@ const AboutText:React.FC<Text> = ({children,position,style,or}) => {
   //   }
   // })
   return (
-    <div className={`mt-14 mb-14 w-44 absolute transition-all ease-linear text-md ${position}-0`} style={{transform:`translateX(${or}${scrollY / 10}px)`,top:`${style}%`}} ref={ref}>
+    <div className={`mt-14 mb-14 w-44 absolute transition-all ease-linear text-md ${position}-0`} style={{transform:`translateX(${or}${scrollY / 5}px)`,top:`${style}%`}} ref={ref}>
       <p>{children}</p>
     </div>
   )
