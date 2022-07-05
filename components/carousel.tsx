@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image'
+
 type CarouselContent = {
   src:string,
   description:string,
@@ -10,12 +11,14 @@ type CarouselContent = {
 export const CarouselContent:React.FC<CarouselContent> = ({src, description}) => {
   return (
     <>
+    <div className="m-5">
     <Image
     alt={description}
     src={src}
-    height={400}
+    height={700}
     width={500}
     />
+    </div>
     </>
   )
 }
@@ -25,46 +28,53 @@ type Wrapper = {
 }
 
 export const CarouselWrapper:React.FC<Wrapper> = ({children}) => {
-  const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-    },
+  const responsive ={
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 3,
+      partialVisibilityGutter: 40
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 1,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
     }
-}
+  }
   return (
     <>
     <Carousel
-  additionalTransfrom={0}
-  autoPlaySpeed={3000}
-  autoPlay={true}
-  className="transition-all opacity-1"
-  centerMode={false}
-  containerClass="container"
-  dotListClass=""
-  draggable
-  focusOnSelect={false}
-  infinite
-  itemClass=""
-  keyBoardControl
-  minimumTouchDrag={80}
-  partialVisible
-  pauseOnHover
-  renderArrowsWhenDisabled={false}
-  renderButtonGroupOutside={false}
-  renderDotsOutside={false}
+ additionalTransfrom={0}
+ arrows
+ autoPlaySpeed={3000}
+ centerMode={false}
+ className=""
+ containerClass="container"
+ dotListClass=""
+ draggable
+ focusOnSelect={false}
+ infinite
+ itemClass=""
+ keyBoardControl
+ minimumTouchDrag={80}
+ partialVisible
+ pauseOnHover
+ renderArrowsWhenDisabled={false}
+ renderButtonGroupOutside={false}
+ renderDotsOutside={false}
   rewind={false}
   rewindWithAnimation={false}
   rtl={false}
