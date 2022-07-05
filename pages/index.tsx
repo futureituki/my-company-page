@@ -26,6 +26,8 @@ const Home: NextPage = () => {
       </CarouselWrapper>
       </div> */}
       <AboutWrapper/>
+      <AboutWrapper/>
+      <AboutWrapper/>
     </div>
   )
 }
