@@ -3,12 +3,10 @@ import { ScrollContainer } from "./lib/useScroll";
 import Image from 'next/image'
 type Text = {
   children:ReactNode
-  position:string
-  or:string
-  style:string
+  number:string
 }
 
-const AboutText:React.FC<Text> = ({children,position,style,or}) => {
+const AboutText:React.FC<Text> = ({children,number}) => {
   const ref = useRef<HTMLDivElement>(null);
   const {scrollY} = useContext(ScrollContainer)
   console.log(scrollY /10)
@@ -20,7 +18,8 @@ const AboutText:React.FC<Text> = ({children,position,style,or}) => {
   //   }
   // })
   return (
-    <div className={`mt-14 mb-14 w-44 absolute transition-all ease-linear text-md ${position}-0`} style={{transform:`translateX(${or}${scrollY / 5}px)`,top:`${style}%`}} ref={ref}>
+    <div className={`mt-14 mb-14 w-44 text-center transition-all ease-linear text-md`} style={{transform:`translateX(${scrollY / 10}px)`}} ref={ref}>
+      <p>{number}</p>
       <p>{children}</p>
     </div>
   )
@@ -35,7 +34,7 @@ const AboutImage:React.FC<AboutImageWrapper> = ({src,style}) => {
     <div className={`text-${style} mt-12`}>
       <Image
       src={src}
-      width={150}
+      width={200}
       height={150}/>
     </div>
   )
@@ -55,14 +54,14 @@ export const AboutWrapper:React.FC = () => {
   return (
     <div className="h-screen overflow-hidden relative mt-12 m-auto w-96">
       <AboutTitle>About</AboutTitle>
-      <AboutText position="left" style="10" or={""}>
+      <AboutText number={"1"}>
       My company provides an environment where employees can work comfortably. 
       </AboutText>
-      <AboutImage src="/assets/about-1.jpeg" style="right"/>
-      <AboutText position="right" style="50"  or={"-"}>
+      <AboutImage src="/assets/about-1.jpeg" style="center"/>
+      <AboutText  number={"2"}>
       My company provides an environment where employees can work comfortably. 
       </AboutText>
-      <AboutImage src="/assets/about-1.jpeg" style="left"/>
+      <AboutImage src="/assets/about-1.jpeg" style="center"/>
     </div>
   )
 }
