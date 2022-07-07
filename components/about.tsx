@@ -1,6 +1,7 @@
 import React, {ReactNode,useContext, useEffect, useRef, useState} from "react";
 import { ScrollContainer } from "./lib/useScroll";
 import Image from 'next/image'
+import { Title } from "./title";
 type Text = {
   children:ReactNode
   number:string
@@ -39,21 +40,22 @@ const AboutImage:React.FC<AboutImageWrapper> = ({src,style}) => {
     </div>
   )
 }
-type Children = {
-  children:ReactNode
-}
-const AboutTitle:React.FC<Children> = ({children}) => {
-  return (
-    <h1 className="text-center m-auto w-24 text-3xl mt-5 md-5 border-b-4 pb-3">
-      {children}
-    </h1>
-  )
-}
+
+// type Children = {
+//   children:ReactNode
+// }
+// const AboutTitle:React.FC<Children> = ({children}) => {
+//   return (
+//     <h1 className="text-center m-auto w-24 text-3xl mt-5 md-5 border-b-4 pb-3">
+//       {children}
+//     </h1>
+//   )
+// }
 
 export const AboutWrapper:React.FC = () => {
   return (
-    <div className="h-screen overflow-hidden relative mt-12 m-auto w-96">
-      <AboutTitle>About</AboutTitle>
+    <div id="about" className="h-5/6 relative mt-12 m-auto w-96 ">
+      <Title>About</Title>
       <AboutText number={"1"}>
       My company provides an environment where employees can work comfortably. 
       </AboutText>

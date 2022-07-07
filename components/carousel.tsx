@@ -15,8 +15,8 @@ export const CarouselContent:React.FC<CarouselContent> = ({src, description}) =>
     <Image
     alt={description}
     src={src}
-    height={700}
-    width={500}
+    height={400}
+    width={300}
     />
     </div>
     </>
@@ -42,7 +42,7 @@ export const CarouselWrapper:React.FC<Wrapper> = ({children}) => {
         max: 464,
         min: 0
       },
-      items: 1,
+      items: 2,
       partialVisibilityGutter: 30
     },
     tablet: {
@@ -72,6 +72,7 @@ export const CarouselWrapper:React.FC<Wrapper> = ({children}) => {
  minimumTouchDrag={80}
  partialVisible
  pauseOnHover
+ autoPlay
  renderArrowsWhenDisabled={false}
  renderButtonGroupOutside={false}
  renderDotsOutside={false}
